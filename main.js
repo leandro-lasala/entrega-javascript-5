@@ -1,9 +1,7 @@
 const container = document.getElementById("container");
-const form = document.getElementById("form")
-const input = document.getElementById("poke_input")
-const button = document.getElementById("button")
-
-
+const form = document.getElementById("form");
+const input = document.getElementById("poke_input");
+const button = document.getElementById("button");
 
 const getpokemon = async (id) => {
   try {
@@ -16,48 +14,38 @@ const getpokemon = async (id) => {
 };
 
 const divider = function divider(number) {
-  const div = number/10
-  return div
-  
-  
-   
-  
-} 
+  const div = number / 10;
+  return div;
+};
 
 const cardPokemon = (pokemon) => {
   container.innerHTML = `
   <div class = "card_pokemon">
     <img src="${pokemon.sprites.other.home.front_default}">
-    <h2>${pokemon.name} </h2>
+    <h2>${pokemon.name.toUpperCase()} </h2>
     <div class = "stats_container">
     <p>${pokemon.types
-      .map(
-      (item) => `<span> class : ${item.type.name}</span>`
-    ).join(" | ")}</p>
-    <p>${divider(pokemon.weight)}kg</p>
-    <p>${divider(pokemon.height)}m</p>
+      .map((item) => `<span> Class: ${item.type.name}</span>`)
+      .join(" | ")}</p>
+    <p>Weight: ${divider(pokemon.weight)}kg</p>
+    <p>Height: ${divider(pokemon.height)}m</p>
     </div>
-    </div>`
+    </div>`;
 };
 
 const renderpokemon = async (e) => {
   e.preventDefault();
- const inputvalue = input.value
- if (!inputvalue){
-  alert("ingresa un numero de Pokemon")}
+  const inputvalue = input.value;
+  if (!inputvalue) {
+    alert("ingresa un numero de Pokemon");
+  }
   const pokemon = await getpokemon(inputvalue);
   cardPokemon(pokemon);
-  form.reset()
+  form.reset();
 };
 
-
 const init = () => {
-  form.addEventListener("submit",renderpokemon)
-}
+  form.addEventListener("submit", renderpokemon);
+};
 
 init();
-
-
-
-
-

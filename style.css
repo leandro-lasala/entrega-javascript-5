@@ -24,7 +24,7 @@ body {
 
 h1 {
   display: flex;
-  margin: 50px;
+  margin: 20px;
   justify-content: center;
   align-items: center;
   max-width: fit-content;
@@ -51,20 +51,23 @@ form {
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18); 
+  margin-top: 5px;
 }
 
 #poke_input {
   width: 200px;
-  height: 20px;
+  height: 30%;
   border-radius: 10px;
-  padding: 5px;
-  background: rgba(255, 255, 255, 0);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.644);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  outline: none;
+  font-size: 30px;
 }
 
 button {
@@ -88,7 +91,12 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  max-width: fit-content;
+  width: fit-content;
+  
+}
+
+img{
+  width: 90%;
 }
 
 .stats_container{
@@ -102,6 +110,4 @@ button {
   -webkit-backdrop-filter: blur(5.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.199);
-  
-
 }
