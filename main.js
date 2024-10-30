@@ -32,8 +32,8 @@ const cardPokemon = (pokemon) => {
     <div class = "stats_container">
     <p>${pokemon.types
       .map(
-      (item) => `<span> class : ${item.type.name} </span>`
-    )}</p>
+      (item) => `<span> class : ${item.type.name}</span>`
+    ).join(" | ")}</p>
     <p>${divider(pokemon.weight)}kg</p>
     <p>${divider(pokemon.height)}m</p>
     </div>
